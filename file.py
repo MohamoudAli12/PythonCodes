@@ -19,8 +19,10 @@ def readFile():
     print('*************************************************')
     print(content)
     print('*************************************************')
+
 def closeFile():
     newFile.close()
+
 cond='yes'
 cond1='yes'
 

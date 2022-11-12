@@ -1,4 +1,5 @@
 import pprint
+import re
 message='''The Project Gutenberg EBook of Romeo and Juliet, by William Shakespeare
 
 This eBook is for the use of anyone anywhere at no cost and with
@@ -4491,14 +4492,17 @@ print("*************************************************************************
 cond1='yes'
 cond='yes'
 count={}
-def userIn():
+def LetterCount():
     letter =input('Please enter letter:')
     for character in message:
         count.setdefault(character,0)
         count[character]=count[character]+1
     print("letter "+ letter + " occurs in Shakespeares Romeo and JULIET",str(count[letter])+" times.")
+def WordSearch():
+    word=input('Please ')
+
 while cond1=='yes':
-    userIn()
+    LetterCount()
     while cond=='yes':
             cond=input('Do you want to continue(yes or no):')
 
