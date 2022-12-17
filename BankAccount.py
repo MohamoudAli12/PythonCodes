@@ -9,12 +9,13 @@ class BankAccount:
         self.Balance = self.Balance + DepositAmount
 
     def Withdrawal(self, WithdrawalAmount):
-
-        if  self.Balance < WithdrawalAmount or self.Balance == 0:
-            print ("Incorrect operation. Please check your Balance")
+    # Check if the balance is less than the withdrawal amount
+        if self.Balance < WithdrawalAmount:
+            print("Incorrect operation. Please check your balance")
         else:
-           self.Balance = self.Balance - WithdrawalAmount
-           print ("you have successfully withdrawn:$", WithdrawalAmount)
+        # Subtract the withdrawal amount from the balance
+            self.Balance -= WithdrawalAmount
+        print("You have successfully withdrawn: $", WithdrawalAmount)
         
 
     def BankFees(self):
@@ -27,9 +28,24 @@ class BankAccount:
         print("Account Name is :", self.Name)
         print("Balance is :",self.Balance)
 
-myAccount = BankAccount(1452542, "Mohamoud", 50000)
-myAccount.Display()
+#myAccount = BankAccount(1452542, "Mohamoud", 50000)
+#myAccount.Display()
 #myAccount.Deposit(500)
-myAccount.Withdrawal(200)
+#myAccount.Withdrawal(200)
 
-myAccount.BankFees()
+def test_bank_account():
+    # Create a BankAccount object
+    myAccount = BankAccount(1452542, "Mohamoud", 50000)
+
+    # Test the Display method
+    myAccount.Display()  # Expected output: "Account number is: 1452542, Account Name is: Mohamoud, Balance is: 50000"
+
+    # Test the Withdrawal method
+    myAccount.Withdrawal(200)  # Expected output: "You have successfully withdrawn: $200"
+    myAccount.Withdrawal(500000)  # Expected output: "Incorrect operation. Please check your balance"
+
+    # Test the BankFees method
+    myAccount.BankFees()  # Expected output: "Bank fees is: 2500"
+
+# Run the test
+test_bank_account()
