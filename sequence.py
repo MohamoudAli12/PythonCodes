@@ -1,5 +1,0 @@
-result=input('enter numbers: ')
-lis=result.split(' ')
-tupl=tuple(lis)
-print(lis)
-print(tupl)
